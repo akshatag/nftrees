@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<svg width='100px' height='100px' version='1.1' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'>
+  <image width='100px' height='100px' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAV1JREFUWEftl7sNAjEMhrkGMQBrMAMtQhRQ0LAJE1CwBw0FFBS0iBFYgwEQzSFH8skJTmwnx0lIR0Fx+PHlt88O1YD5LE7Lmnve5rPL6lxBPPeVk3A6fns8t+fQzAcQ1f4+rznnMIEmuhWiVQBrcjxQVAEwyFEB/CiMFMMBUCfJIVWKUAVNLA8AHSAQdcbAXONxdhb1GoBcFSic1AecIh5AWD9N53NBLW9VMYAECYCxErpBlDOEpKT0d6kRiwBypmHoowaQThKqkpKd2ooAUmJp6KTeDIj91YSW+mptYxCdAaTK04kCKaWa+0Cs1uFY1squtXMAuJC0TqV22BPuPpC6EdHlZFkwmo3pXck4h9iEzCkVnBgThrmcAhYArfyhep0CaJO7ZfQLBegGjJ0c80YB0KBkW0rJkwpIfTE5vJzJYzNqTOHZ7ngVD+UtI21Tgd12PRP/MfUAvQJ/p8AHu3vdrcNeKZ4AAAAASUVORK5CYII='></image>
+  <image id='apple' x='-3' y='-3' width='10px' height='10px' href='data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAADCAYAAABWKLW/AAAAAXNSR0IArs4c6QAAACBJREFUGFdjZGBgYPBZH/B/S+AGRsaXcsn/QQIggMIBAM0ICNbrt1VcAAAAAElFTkSuQmCC'></image>
+</svg>
