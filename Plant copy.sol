@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: UNLICENSED
 
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.1;
 
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/utils/Strings.sol";
@@ -60,6 +60,13 @@ contract Plant is ERC721URIStorage {
     seedLogs[plantId] = Seed(block.timestamp); 
     refreshTokenURI(plantId); 
   }
+
+  function water(uint256 tokenId) public {
+    PlantType pt = plantLogs[tokenId];
+    
+  }
+
+
 
   function sow(uint256 tokenId) public {
     require(msg.sender == ownerOf(tokenId), "This plant doesn't belong to you.");

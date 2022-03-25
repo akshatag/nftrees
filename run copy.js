@@ -1,4 +1,4 @@
-const { web3, ethers } = require("hardhat");
+const { web3 } = require("hardhat");
 
 const getGasCost = async (txn) => {
   let block = await hre.ethers.provider.getBlock(txn.blockNumber);
@@ -11,8 +11,6 @@ const main = async () => {
   const nftContractFactory = await hre.ethers.getContractFactory('PlantContract');
   const nftContract = await nftContractFactory.deploy();
   await nftContract.deployed();
-
-  const [owner] = await ethers.getSigners();
   
   console.log("Contract deployed to: ", nftContract.address)
 
@@ -29,27 +27,29 @@ const main = async () => {
 
   rTxn = await nftContract.tokenURI(0);
   console.log(rTxn);
-
-  /* 2: Water the seed */
-  wTxn = await nftContract.water(0);
+  
+  /* 2: Sow the seed */
+  wTxn = await nftContract.sow(0);
   await wTxn.wait();
   gas = await getGasCost(wTxn);
 
-  console.log("Seed watered. It has grown into a sapling! Gas Cost: " + gas);
+  console.log("Seed sowed. You received a sapling! Gas Cost: " + gas);
 
   rTxn = await nftContract.tokenURI(0);
-  console.log(rTxn);  
+  console.log(rTxn);
 
   /* 3: Water the sapling */
   wTxn = await nftContract.water(0);
   await wTxn.wait();
   gas = await getGasCost(wTxn);
 
-  console.log("Sapling watered. It has grown into a tree! Gas Cost: " + gas);
+  console.log("Sapling watered. It has grown into an apple tree! Gas Cost: " + gas);
 
   rTxn = await nftContract.tokenURI(0);
   console.log(rTxn);  
 
+  /* Wait a few seconds */
+  await new Promise(resolve => setTimeout(resolve, 5000));
 
   /* 4: Water the tree */
   wTxn = await nftContract.water(0);
@@ -60,37 +60,17 @@ const main = async () => {
 
   rTxn = await nftContract.tokenURI(0);
   console.log(rTxn); 
+  
 
-
-  /* 5: Harvest the tree */
+  /* 5: Harvest an apple */
   wTxn = await nftContract.harvest(0);
   await wTxn.wait();
   gas = await getGasCost(wTxn);
 
-  console.log("You got fruit!" + gas);
+  console.log("Tree harvested. You got an apple! Gas Cost: " + gas);
 
   rTxn = await nftContract.tokenURI(0);
   console.log(rTxn); 
-
-  console.log("You got compost!")
-
-  rTxn = await nftContract.getCMPSTBalanceOf(owner.address);
-  console.log(rTxn.toNumber());
-  
-  
-  /* Wait a few seconds */
-  await new Promise(resolve => setTimeout(resolve, 10000));
-
-    /* 4: Water the tree */
-    wTxn = await nftContract.water(0);
-    await wTxn.wait();
-    gas = await getGasCost(wTxn);
-  
-    console.log("It died :( " + gas);
-  
-    rTxn = await nftContract.tokenURI(0);
-    console.log(rTxn); 
-
 }
 
 const runMain = async() => {
